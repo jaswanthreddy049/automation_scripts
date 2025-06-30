@@ -57,9 +57,7 @@ Data_types = ['Data_set'] #'Upload File','Data_set','Sequence'
 Select_categories = ['All'] #,'Toxicity','Allergenicity','Antigenicity','Epitope'
 
 # === Reusable Helpers ===
-def fill_field(field_id, value):
-    input_elem = mywait.until(EC.presence_of_element_located((By.ID, field_id)))
-    input_elem.send_keys(Keys.CONTROL + 'a')
+"""def fill_field(field_id, value):
     input_elem.send_keys(Keys.BACKSPACE)
     input_elem.send_keys(value)
     print(f"{field_id.capitalize()} input successful.")
@@ -70,6 +68,7 @@ def Values():
     fill_field("Antigen Antibody Binding","10")
     fill_field("CDR Prediction","10")
     return "10", "10", "10","10","10"
+    """
     
 # Select Data type
 try:
@@ -89,7 +88,6 @@ try:
                 category_element = mywait.until(EC.presence_of_element_located((By.XPATH, f"//input[@value='{Category}']")))
                 category_element.click()
                 print(f"Category '{Category}' selected successfully.")
-
 
             # Select data type
             #data_type_element = mywait.until(EC.presence_of_element_located((By.XPATH, f"//button[normalize-space()='{data_type}']")))
